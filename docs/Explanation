@@ -63,7 +63,7 @@
 
 	         -  PUT hali hazırda var olan bir kaynak üzerinde değişiklik yapmak için
 
-	         -  DELETE ise var olan bir kaynağı silmek için kullanılır
+	         -  DELETE ise var olan bir kaynağı silmek için kullanılır.
 
 	         -  @Produces anotasyonu verileri istenilen formatta listelemeye yarıyor. Default olarak xml çıktısı üretir
 
