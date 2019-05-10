@@ -1,0 +1,77 @@
+
+	                                             Web servis nedir?
+
+                 Web servis HTTP protokolü üzerinden diğer sistemlere/cihazlara hizmet veren yapılardır.
+
+		   -> SOAP : Simple Object Protocol’u dağınık uygulamalarda bilgi taşımayı sağlar.
+		    SOAP içerisinde protokoller mevcuttur.Bu protokollere yazılımcı tam olarak hakim olmalı ve protokolleri
+		    düzgün bir biçimde kullanması gerekir.
+
+           -> REST  : Sunucu ile istemci arasında hızlı bir iletişim sağlar.Yazılımcı protokollerle ilgilenmez.
+           SOAP’ın üzerinde çalışır.Alt kısımda SOAP’ı kullanır.Protokolleri standartlaştırmıştır.Bu sayede karmaşık
+           yapıdan kurtularak hızlı çözümler sunulmasını sağlar.
+
+		   * RESTfull : Daha hızlı ve kolay kullanımı olduğu için daha çok tercih ediliyor.
+
+		>>> HATEOAS kavrami : RESTful web service’in extra olarak bilgi sunmasi ve boylece tek bir giris noktasindan
+		 sonra uygulamada yapabilecegimiz isleri kolayca gormemiz ve yapmamiza olana saglar.
+
+		                            				Ne işe yarar?
+
+           Web servis uzak sistemler veya farklı platformlar arasında XML, JSON, CSV vb. ortak bir biçim kullanarak
+          veri alışverişini sağlar.
+
+			                        			Neden Kullanılmalıdır ?
+
+		 Web servis genellikle farklı platformlar arasında belirlenen ortak bir biçim ile veri alışverişi yapmak için
+		 kullanılır.
+
+		 Örneğin; Çok kullanıcılı olan bir firmada C# diliyle geliştirilen muhasebe, varlık yönetimi vb. uygulama,
+		kullanıcıların isteği üzerine Java işletim sistemli cep telefonları üzerinden de kullanılmak istenebilir.
+
+		 Platformların birbirleriyle iletişim kurabilmesi için ortak bir biçimi kullanması gerekir.
+
+		 Bu durumda platformlar arası ortak bir biçimi kullanan web servis yazılarak iletişim sağlanır.
+
+		 Özetle; Web Servis, Java, C++, C#, PHP, Node.js, Python, GO, Linux, Windows vb. HTTP protokolü üzerinden
+		iletişim yapan ve kullanılacak ortak biçimi (genellikle XML ve JSON) destekleyen yapılar arası iletişimi sağlar.
+
+
+						                           Resource Methods
+
+		Resource method’lar , Resource Root Class’larda tanimladigimiz istekleri karsilayan (handle request) metotlardir.
+
+		HTTP methodlarina karsilik olarak ilgili annotation’lari alabilir.
+
+		@GET
+		@POST
+		@PUT
+		@DELETE
+		@HEAD
+		@OPTIONS
+
+		Resource Method’lar public olmalidir.
+		Resource Method’lar checked ya da unchecked exception firlatabilir (throws)
+		Resource Method’larin donus tipi void , Response , GenericEntity ya da diger Java tipleri olabilir.
+
+
+				                              		    METODLAR
+
+             -  GET herhangi bir kaynağı görüntülemek için
+
+	         -  POST yeni bir kaynak oluşturmak için
+
+	         -  PUT hali hazırda var olan bir kaynak üzerinde değişiklik yapmak için
+
+	         -  DELETE ise var olan bir kaynağı silmek için kullanılır
+
+	         -  @Produces anotasyonu verileri istenilen formatta listelemeye yarıyor. Default olarak xml çıktısı üretir
+
+	     -  @Path anotasyonu aynı resource içinde birden fazla metot kullanabiliriz.
+
+	     -  @PathParam anotasyonu dosya dizini mantığı , personeller diye bir dosya düşünelim, 2.satırdaki dosyayı
+	     cağırmak istiyoruz “/personeller/2” şeklinde bir ifade kullanabiliriz.
+
+	     -  @QueryParam anotasyonu :Parametrelerinizi “&” ve “?” kullanarak url içerisinde belirtiyoruz.
+
+	     -  @Consumes birden fazla farklı formatta(json,xml,text..) veriyi alıp java nesnesine çevirebiliriz.
